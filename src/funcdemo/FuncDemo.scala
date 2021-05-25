@@ -5,6 +5,10 @@ import java.util.Date
 object FuncDemo {
 
   def main(args: Array[String]): Unit = {
+    // 如果函数不想立马执行，可以在后面加一个下划线
+    var test = test00 _
+
+    println("--------------------")
     println(test01(10))
     println(test02("111"))
 
@@ -60,6 +64,10 @@ object FuncDemo {
     calc(3, 4, opFactory("/"))
 
     test05(1, 2, 3)("a", "b", "c")
+  }
+
+  def test00(): Unit ={
+    println("Hello Scala")
   }
 
   // 没有返回值的函数，Unit打印出来就是一对小括号()
