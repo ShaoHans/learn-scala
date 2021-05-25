@@ -19,6 +19,8 @@ object CollectionsDemo {
     testMap()
     println("----------链式--------------")
     testStream()
+    println("----------迭代器--------------")
+    testIter()
   }
 
   // 数组
@@ -99,5 +101,17 @@ object CollectionsDemo {
   def testStream(): Unit = {
     val list = List(1, 2, 3, 4)
     list.map(i => i * i).map(_ - 10).foreach(println)
+
+    val words = List("hello,c#", "tom,lili", "hello,beijing")
+    words.flatMap(w => w.split(",")).foreach(println)
+    //words.flatMap(w => w.split(",")).map(w => Tuple2(w, 1)).foreach(println)
+    words.flatMap(w => w.split(",")).map((_, 1)).foreach(println)
+  }
+
+  def testIter(): Unit = {
+    // 迭代器模式，迭代器里不存数据，只存一个类似指针的对象，节省内存
+    val words = List("hello,c#", "tom,lili", "hello,beijing")
+    val iter = words.iterator
+    iter.flatMap(w => w.split(",")).map((_, 1)).foreach(println)
   }
 }
