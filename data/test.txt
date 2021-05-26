@@ -1,0 +1,7 @@
+scala,c#
+c#,java
+python,c#
+c,c++
+c++,java
+php,js
+js,linux
