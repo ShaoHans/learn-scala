@@ -11,5 +11,7 @@ object WordCount {
     val context = new SparkContext(conf)
     val fileRDD = context.textFile("data/test.txt")
     fileRDD.flatMap(_.split(",")).map((_, 1)).reduceByKey(_ + _).foreach(println)
+
+    Thread.sleep(Long.MaxValue)
   }
 }

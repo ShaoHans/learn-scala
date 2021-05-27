@@ -50,8 +50,8 @@ object CollectionsDemo {
     var list2 = ListBuffer[Any]("aa", "bb")
     // ++（相当于 :++） 合并两个集合，把list2追加到list中，返回一个新集合
     //var list3 = list.++(list2)
-    var list3 = list.:++(list2)
-    list3.foreach(println)
+    //var list3 = list.:++(list2)
+    //list3.foreach(println)
 
     // ++: 把list追加到list2中
     var list4 = list.++:(list2)
