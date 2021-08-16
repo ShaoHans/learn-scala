@@ -9,8 +9,8 @@
         <module name="learn-scala" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="learn-scala" target="1.5" />
+    <bytecodeTargetLevel target="11">
+      <module name="learn-scala" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
