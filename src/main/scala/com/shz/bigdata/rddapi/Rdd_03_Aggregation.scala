@@ -4,9 +4,9 @@ import org.apache.spark.{SparkConf, SparkContext};
 
 /**
  * map：           一进一出
- * mapValues：     可单独对每个元素的values进行处理，按照列格式输出 =》(k1,List(v11,v12)),(k2,List(v21,v22))
+ * mapValues：     可单独对每个元素的values进行处理，按照列格式输出 =》(k1,List(v11,v12)),(k2,List(v21,v22))，优化：key不会发生变化，不产生shuffle
  * flatMap：       一进多出，对元素的key和value一起处理
- * flatMapValues： 可单独对每个元素的values进行处理，按照行格式输出 =》(k1,v11),(k1,v12),(k2,v21),(k2,v22)
+ * flatMapValues： 可单独对每个元素的values进行处理，按照行格式输出 =》(k1,v11),(k1,v12),(k2,v21),(k2,v22)，优化：key不会发生变化，不产生shuffle
  */
 object Rdd_03_Aggregation {
   def main(args: Array[String]): Unit = {

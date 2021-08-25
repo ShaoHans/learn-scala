@@ -1,5 +1,6 @@
 package collectionsdemo
 
+import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
 object CollectionsDemo {
@@ -21,6 +22,8 @@ object CollectionsDemo {
     testStream()
     println("----------迭代器--------------")
     testIter()
+    println("----------SortedSet--------------")
+    testSortedSet()
   }
 
   // 数组
@@ -113,5 +116,14 @@ object CollectionsDemo {
     val words = List("hello,c#", "tom,lili", "hello,beijing")
     val iter = words.iterator
     iter.flatMap(w => w.split(",")).map((_, 1)).foreach(println)
+  }
+
+  def testSortedSet(): Unit ={
+    implicit val o = new Ordering[(Int,Int)] {
+      override def compare(x: (Int, Int), y: (Int, Int)): Int = y._2.compare(x._2)
+    }
+    val tuples = scala.collection.immutable.SortedSet((4, 10), (3, 15), (1, 35), (13, 20), (1, 32))
+    println(tuples.head)
+    tuples.foreach(println)
   }
 }
